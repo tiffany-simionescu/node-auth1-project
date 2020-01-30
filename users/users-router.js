@@ -33,7 +33,7 @@ function restricted() {
 }
 
 // GET - /api/users
-router.get('/', restricted(), (req, res, next) => {
+router.get('/', restricted(), async (req, res, next) => {
   try {
     const users = await Users.find()
     res.json(users);
